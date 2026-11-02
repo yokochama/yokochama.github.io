@@ -1,0 +1,42 @@
+# main に反映すると、本名を差し込んだサイトを GitHub Pages に公開する。
+# 本名はリポジトリのシークレット REAL_NAME / REAL_NAME_KANA に登録する（ファイルには書かない）。
+name: サイトを公開
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: 本名を差し込んで公開用のファイルを作る
+        env:
+          REAL_NAME: ${{ secrets.REAL_NAME }}
+          REAL_NAME_KANA: ${{ secrets.REAL_NAME_KANA }}
+        run: python3 .github/scripts/build_site.py --out _site
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
