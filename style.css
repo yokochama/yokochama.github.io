@@ -72,6 +72,8 @@ header h1 {
   font-size: 32px;
   font-weight: 400;
   letter-spacing: 0.12em;
+  /* 長い題が折り返したとき、最後の1〜2字だけが次の行に落ちないようにする */
+  text-wrap: balance;
 }
 
 .intro {
