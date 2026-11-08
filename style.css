@@ -126,6 +126,10 @@ section p {
   padding: 32px 0;
   font-size: 20px;
   text-align: center;
+  /* 改行は wbr の位置だけにして、行の長さをそろえる */
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .tanka-list {
