@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yokochama.github.io/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://yokochama.github.io/about.html</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://yokochama.github.io/tanka/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://yokochama.github.io/tanka/series-01.html</loc>
@@ -51,5 +51,13 @@
   <url>
     <loc>https://yokochama.github.io/tanka/series-10.html</loc>
     <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://yokochama.github.io/tanka/series-11.html</loc>
+    <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://yokochama.github.io/tanka/series-12.html</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
 </urlset>
